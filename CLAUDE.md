@@ -1,15 +1,17 @@
 # derival-media — luật cho Claude
 
-Repo **PUBLIC** lưu ảnh/video/nội dung Claude tạo ra cho studio Derival (đổi tên từ `derival-campaign` ngày 25/10/2026). Studio đọc `index.csv` và `media/*/*_frames.jpg` ở đây để chống lặp nội dung. Mọi luật nội dung, công cụ, chiến lược ở repo
-`derivallcc/derival-studio` (đọc `CLAUDE.md` ở đó trước khi làm nội dung).
+Repo **PUBLIC** lưu ảnh/video/nội dung Claude tạo ra cho studio Derival (đổi tên từ `derival-campaign` ngày 25/10/2026).
+Kiến trúc catalog + intel từ 05/11/2026: xem `README.md`.
 
-- Ghi vào đây **chỉ** bằng `scripts/archive_run.py` của studio (nó cập nhật `media/<CT>/` và `index.csv` cùng lúc).
-- **Mỗi sản phẩm có đủ thông tin đăng ở đây** (TD-018, 25/10/2026): `media/<CT>/<CT>_post.md` — caption 5 MXH + kênh/nhóm, giờ đăng, ảnh bìa,
-  bình luận ghim, hashtag, câu miễn trừ. Bản tin Telegram gửi link file này. Studio không lưu kết quả.
-- **Mỗi sản phẩm có kịch bản ở đây** (TD-023, 26/10/2026): `media/<CT>/<CT>_<v>_script.md` — lời đọc + chữ trên hình theo cảnh
-  (bản công khai, không cột thiết kế nội bộ). Studio quét các file này và `_post.md` (`scripts/script_scan.py`) để nội dung mới không lặp lời, hook, câu chốt.
-- Không bao giờ đưa vào: khoá/token, `secrets/`, bản tin D-family, điểm barem, ghi chú nội bộ (trạng thái chấm, "cần quyết"),
-  số tài khoản, lệnh đang mở, dữ liệu cá nhân, file dự án (`projects/`), bản nháp nội bộ không định giao.
-- File ≤ 25 MB. Không sửa hay xoá file cũ đã gửi link (link trong bản tin phải sống); phiên bản mới = file mới `_v<n+1>`.
-  Muốn gỡ một video khỏi công khai: hỏi người dùng trước (đã có link trong nhóm và lịch sử git vẫn giữ file).
-- Commit `<CT>_<v>: <loại>` lên `main`.
+**Luật đầy đủ ở `AGENTS.md` — đọc trước khi ghi bất cứ gì.** Tóm tắt:
+
+- Ghi vào đây **chỉ** bằng `tools/media.py` (studio `scripts/archive_run.py` gọi tool này). Không tự viết CSV, không sửa tay
+  `index.csv` / `intel/summary.csv`. `python3 tools/media.py check` phải sạch trước khi commit.
+- File bất biến: không sửa, đổi tên, chuyển hay xoá file đã gửi link; phiên bản mới = file mới `_v<n+1>`. Trạng thái là metadata.
+  Ngoại lệ: gói đăng bài `<CT>_post.md` (TD-018). `test/` đóng băng; bản thử mới vào `media/<CT>/` với `--test`.
+- Mỗi sản phẩm có `media/<CT>/<CT>_post.md` (TD-018) và kịch bản công khai `media/<CT>/<CT>_<v>_script.md` (TD-023).
+  Studio quét các file này (`scripts/script_scan.py`) để nội dung mới không lặp.
+- Không bao giờ đưa vào: khoá/token, `secrets/`, bản tin D-family, điểm barem chi tiết, ghi chú nội bộ, số tài khoản, lệnh đang mở,
+  dữ liệu cá nhân, file dự án (`projects/`), bản nháp nội bộ không định giao.
+- File ≤ 25 MB. Muốn gỡ một video khỏi công khai: hỏi người dùng trước.
+- Commit `<CT>_<v>: <loại>` lên `main`. Mọi luật nội dung, công cụ, chiến lược ở repo `derivallcc/derival-studio`.

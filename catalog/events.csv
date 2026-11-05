@@ -1,0 +1,24 @@
+at,work_id,version,event,from_status,to_status,actor,actor_type,ref,note
+2026-10-24,CT-0001,v1,created,,testing,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-24,CT-0001,v1,status,testing,superseded,migration,system,,thay bằng v2
+2026-10-24,CT-0001,v2,created,,testing,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-24,CT-0002,v1,created,,testing,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-24,CT-0002,v1,status,testing,superseded,migration,system,,thay bằng v2
+2026-10-24,CT-0002,v2,created,,testing,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-24,CT-0003,v6,created,,testing,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-24,CT-0003,v6,status,testing,superseded,migration,system,,thay bằng v7
+2026-10-24,CT-0003,v7,created,,testing,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-25,CT-0004,v2,created,,testing,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-25,CT-0005,v2,created,,testing,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-25,CT-0006,v1,created,,testing,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-25,CT-0006,v1,status,testing,superseded,migration,system,,thay bằng v2
+2026-10-25,CT-0006,v2,created,,testing,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-25,CT-0007,v1,created,,testing,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-26,CT-0008,v2,created,,pending_review,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-26,CT-0009,v1,created,,pending_review,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-26,CT-0010,v1,created,,pending_review,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-10-27,CT-0011,v1,created,,testing,migration,system,ST261027A,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-11-01,CT-0012,v1,created,,pending_review,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-11-01,CT-0013,v1,created,,pending_review,migration,system,,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-11-03,CT-0014,v1,created,,testing,migration,system,BS261103A,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
+2026-11-03,CT-0015,v1,created,,testing,migration,system,BS261103B,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv

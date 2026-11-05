@@ -95,3 +95,47 @@ e5c7d30364d0160f611f06aa65511ef73c986cd4536fadf91147514347f8fa91      75680  tes
 58e23f0be926563868fd246351507edd8ce91c5e6e66fec1058915e15d8b2410       1616  test/CT-0015/CT-0015_v1_script.md
 ```
 <!-- baseline:end -->
+
+## Quyết định áp dụng (05/11/2026)
+
+Người dùng yêu cầu "thực hiện các đề xuất"; các câu Q1–Q5 lấy theo khuyến nghị của đề xuất. Đổi ý câu nào thì sửa tài liệu +
+tool trong một commit riêng.
+
+| # | Quyết định | Hệ quả trong repo |
+|---|---|---|
+| Q1 | (A) giữ public, chỉ lưu dữ liệu an toàn công khai. Điểm barem giữ ở studio | `reviews.csv` không có cột điểm; `ref` trỏ studio `qa.md` |
+| Q2 | Bản thử mới vào `media/<CT>/` (status `testing`), `test/` đóng băng | `check` chặn file mới trong `test/`; `index.csv` bỏ bản thử mới |
+| Q3 | social-intel ghi nếu push được, không thì studio nhập từ Sheet | Tool hỗ trợ cả hai (`--source social-intel` / `admin`); **chưa kiểm** quyền push của Composio |
+| Q4 | Phiên này chỉ truy cập được `derival-media` | Việc ở studio / system-design / knowledge liệt kê bên dưới, chưa làm |
+| Q5 | Nơi gốc của trạng thái: Media `catalog/events.csv`; registry studio là bản sao | `works.status` sinh từ `events.csv` |
+
+## Tiến độ
+
+| GĐ | Việc | Trạng thái |
+|---|---|---|
+| 0 | Mốc file + sha256, thử link raw | Xong (commit GĐ0) |
+| 1 | docs, schema, `tools/media.py`, catalog điền ngược, `index.csv` sinh lại | Xong: `check` 0 lỗi; `index.csv` chỉ khác bản cũ 2 dòng trùng đã bỏ; `test_media.py` đạt |
+| 2 | Studio `archive_run.py` gọi `media.py register` | Chưa — cần repo studio |
+| 3 | Intel: publications, metrics, reviews, insights, summary | Phần Media xong (bảng + lệnh ghi). Chưa nhập dữ liệu từ Sheet `social` |
+| 4 | Đồng bộ tài liệu studio, system-design, knowledge | Chưa — cần các repo đó (knowledge: chỉ CEO sửa, BD-019) |
+| 5 | Theo dõi dung lượng (ngưỡng 1 GB) | `check` đã cảnh báo tự động |
+
+### Nguồn điền ngược (GĐ1)
+
+- `assets.csv`: từng dòng `index.csv` (bỏ trùng) + 8 file `test/`; sha256 đủ, kích thước, khung hình (ffprobe / header ảnh),
+  ngày theo `index.csv` (file `test/`: ngày commit 03/11/2026). Cột `legacy=y`.
+- `works.csv`: tiêu đề lấy từ dòng in đậm của `_script.md`, hoặc tiêu đề `_post.md`; `campaign`/`format`/`series` từ `utm_campaign`.
+- `events.csv`: trạng thái theo audit 05/11/2026 (xem `docs/lifecycle.md`), `actor=migration`. **Cần studio đối chiếu
+  `brain/content/registry.csv`**; khác thì ghi thêm bằng `media.py status`.
+- `relations.csv`: frames ← video, script → video, JPG rendition_of PNG, v mới supersedes v cũ, CT-0012/CT-0013 dùng logo
+  knowledge và nền studio.
+
+### Việc còn lại ở repo khác
+
+- **studio**: `scripts/archive_run.py` gọi `../derival-media/tools/media.py register … && media.py commit --push`;
+  `--test` → `register --test` (không ghi `test/`); thêm bước duyệt/đăng vào `routines/studio-daily.md`
+  (`media.py status`, `media.py publish`); đánh dấu ngừng dùng `social_sync.py` và `interactions/{posts,metrics,comments,account_stats}.csv`;
+  sửa các dòng tài liệu nói về `test/` (CLAUDE.md, brainstorm/brainwave README, skills); đối chiếu trạng thái điền ngược với registry.
+- **system-design**: social-intel đọc `catalog/works.csv` (tiêu đề chuẩn, lọc `testing`) thay regex; nếu push được thì ghi
+  `publish` + `metrics` + `insight` (Q3); cập nhật `12-studio/03`, `14-ecosystem §2.11`, `ops/tasks/studio-content.md`, `my-derival-bot.md`.
+- **knowledge** (chỉ CEO, BD-019): `cross-repo.md` (vai trò Media mới), `brand-assets.md`, `shared-vocabulary.md` (bảng trạng thái).

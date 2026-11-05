@@ -1,0 +1,44 @@
+subject,rel,object,note
+CT-0001_v2,supersedes,CT-0001_v1,
+CT-0001_v1_frames.jpg,derived_from,CT-0001_v1.mp4,
+CT-0001_v2_frames.jpg,derived_from,CT-0001_v2.mp4,
+CT-0001_v2_script.md,script_of,CT-0001_v2.mp4,
+CT-0002_v2,supersedes,CT-0002_v1,
+CT-0002_v1_frames.jpg,derived_from,CT-0002_v1.mp4,
+CT-0002_v2_frames.jpg,derived_from,CT-0002_v2.mp4,
+CT-0002_v2_script.md,script_of,CT-0002_v2.mp4,
+CT-0003_v7,supersedes,CT-0003_v6,
+CT-0003_v7_frames.jpg,derived_from,CT-0003_v7.mp4,
+CT-0003_v6_frames.jpg,derived_from,CT-0003_v6.mp4,
+CT-0003_v7_script.md,script_of,CT-0003_v7.mp4,
+CT-0004_v2_frames.jpg,derived_from,CT-0004_v2.mp4,
+CT-0004_v2_script.md,script_of,CT-0004_v2.mp4,
+CT-0005_v2_frames.jpg,derived_from,CT-0005_v2.mp4,
+CT-0005_v2_script.md,script_of,CT-0005_v2.mp4,
+CT-0006_v2,supersedes,CT-0006_v1,
+CT-0006_v1_frames.jpg,derived_from,CT-0006_v1.mp4,
+CT-0006_v2_frames.jpg,derived_from,CT-0006_v2.mp4,
+CT-0006_v2_script.md,script_of,CT-0006_v2.mp4,
+CT-0007_v1_frames.jpg,derived_from,CT-0007_v1.mp4,
+CT-0007_v1_script.md,script_of,CT-0007_v1.mp4,
+CT-0008_p01.jpg,rendition_of,CT-0008_p01.png,JPG dự phòng của PNG gốc
+CT-0009_p01.jpg,rendition_of,CT-0009_p01.png,JPG dự phòng của PNG gốc
+CT-0010_p01.jpg,rendition_of,CT-0010_p01.png,JPG dự phòng của PNG gốc
+CT-0010_p02.jpg,rendition_of,CT-0010_p02.png,JPG dự phòng của PNG gốc
+CT-0010_p03.jpg,rendition_of,CT-0010_p03.png,JPG dự phòng của PNG gốc
+CT-0010_p04.jpg,rendition_of,CT-0010_p04.png,JPG dự phòng của PNG gốc
+CT-0010_p05.jpg,rendition_of,CT-0010_p05.png,JPG dự phòng của PNG gốc
+CT-0010_p06.jpg,rendition_of,CT-0010_p06.png,JPG dự phòng của PNG gốc
+CT-0010_v1_script.md,script_of,CT-0010_v1,
+CT-0011_v1_frames.jpg,derived_from,CT-0011_v1.mp4,
+CT-0011_v1_script.md,script_of,CT-0011_v1.mp4,
+CT-0012_p01.jpg,rendition_of,CT-0012_p01.png,JPG dự phòng của PNG gốc
+CT-0013_p01.jpg,rendition_of,CT-0013_p01.png,JPG dự phòng của PNG gốc
+CT-0014_v1_frames.jpg,derived_from,CT-0014_v1.mp4,
+CT-0014_v1_script.md,script_of,CT-0014_v1.mp4,
+CT-0015_v1_frames.jpg,derived_from,CT-0015_v1.mp4,
+CT-0015_v1_script.md,script_of,CT-0015_v1.mp4,
+CT-0012_v1,uses,knowledge:02-brand/positioning.md,"câu định vị, khẩu hiệu VỮNG"
+CT-0012_v1,uses,knowledge:02-brand/assets/logos/,logo gốc BD-021 (không chép)
+CT-0013_v1,uses,knowledge:02-brand/assets/logos/,logo gốc BD-021 (không chép)
+CT-0013_v1,uses,studio:brand/scenes/minh-hoa-giang-sinh-rung-thong.webp,nền minh hoạ

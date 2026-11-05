@@ -1,0 +1,7 @@
+# Bảng chỉ thêm: hai người ghi (studio, social-intel) cùng thêm dòng thì git gộp cả hai.
+# media.py build gộp dòng trùng khoá sau merge; index.csv và intel/summary.csv luôn sinh lại.
+catalog/*.csv merge=union
+intel/metrics/*.csv merge=union
+intel/reviews.csv merge=union
+intel/insights.csv merge=union
+index.csv -text
