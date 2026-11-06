@@ -23,3 +23,4 @@ at,work_id,version,event,from_status,to_status,actor,actor_type,ref,note
 2026-11-03,CT-0014,v1,created,,testing,migration,system,BS261103A,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
 2026-11-03,CT-0015,v1,created,,testing,migration,system,BS261103B,điền ngược 05/11/2026 (GĐ1) theo audit + registry studio; đối chiếu lại brain/content/registry.csv
 2026-11-06T08:28:24+07:00,CT-0016,v1,created,,testing,studio:archive_run,ai,BS261106A,
+2026-11-06T08:47:35+07:00,CT-0017,v1,created,,testing,studio:archive_run,system,BS261106B,
