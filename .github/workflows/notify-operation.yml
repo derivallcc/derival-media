@@ -20,9 +20,9 @@ jobs:
         run: |
           if [ -z "$TOKEN" ]; then echo "::warning title=Không gửi Operation::Chưa có secret TELEGRAM_BOT_TOKEN"; exit 0; fi
           text="$(jq -r '
-            def files: (.added + .modified + .removed) as $f | ($f[:5] | join(", ")) + (if ($f|length) > 5 then " (+\(($f|length) - 5))" else "" end);
+            def files: ((.added // []) + (.modified // []) + (.removed // [])) as $f | if ($f|length) == 0 then "—" else ($f[:5] | join(", ")) + (if ($f|length) > 5 then " (+\(($f|length) - 5))" else "" end) end;
             "📝 \(.repository.name) · main\(if .forced then " · FORCE PUSH" else "" end)\nNgười đẩy: \(.pusher.name)\n\n"
-            + ([.commits[] | "• \(.id[0:7]) \(.message | split("\n")[0] | .[0:400])\n  Tác giả: \(.author.name) · Tệp: \(files)"] | join("\n"))
+            + ([(.commits // [])[] | "• \(.id[0:7]) \(.message | split("\n")[0] | .[0:400])\n  Tác giả: \(.author.name) · Tệp: \(files)"] | join("\n"))
             + "\n\n\(.compare)"' "$GITHUB_EVENT_PATH")"
           curl -sS -o /dev/null -w '%{http_code}\n' --fail "https://api.telegram.org/bot${TOKEN}/sendMessage" \
             --form-string chat_id="$CHAT_ID" --form-string message_thread_id="$THREAD_ID" \
