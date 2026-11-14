@@ -1,0 +1,30 @@
+# CEO 14/11/2026: mọi push lên main của repo này — từ desktop, bot, VPS, GitHub web hay merge PR — được GitHub Actions gửi 1 tin chữ vào
+# topic Operation (nhóm D-Family) để lưu lịch sử thay đổi: repo, người đẩy, từng commit (mã · tiêu đề · tác giả · tệp), link so sánh.
+# Chỉ thông báo: không ảnh, không chặn push. Cần secret TELEGRAM_BOT_TOKEN (bot đã có trong nhóm); thiếu → cảnh báo trong Actions.
+# Thay đổi không qua git (sửa thẳng trên server/WordPress) không được báo. Cùng một tệp ở mọi repo derivallcc — sửa thì sửa hết.
+name: notify-operation
+on:
+  push:
+    branches: [main]
+jobs:
+  telegram:
+    if: ${{ !github.event.deleted }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      CHAT_ID: '-1002270965355'   # nhóm D-Family (_0_Hardcode d_family_id)
+      THREAD_ID: '12'             # topic Operation (_0_Hardcode d_operation_id)
+    steps:
+      - name: Thông báo topic Operation
+        run: |
+          if [ -z "$TOKEN" ]; then echo "::warning title=Không gửi Operation::Chưa có secret TELEGRAM_BOT_TOKEN"; exit 0; fi
+          text="$(jq -r '
+            def files: (.added + .modified + .removed) as $f | ($f[:5] | join(", ")) + (if ($f|length) > 5 then " (+\(($f|length) - 5))" else "" end);
+            "📝 \(.repository.name) · main\(if .forced then " · FORCE PUSH" else "" end)\nNgười đẩy: \(.pusher.name)\n\n"
+            + ([.commits[] | "• \(.id[0:7]) \(.message | split("\n")[0] | .[0:400])\n  Tác giả: \(.author.name) · Tệp: \(files)"] | join("\n"))
+            + "\n\n\(.compare)"' "$GITHUB_EVENT_PATH")"
+          curl -sS -o /dev/null -w '%{http_code}\n' --fail "https://api.telegram.org/bot${TOKEN}/sendMessage" \
+            --form-string chat_id="$CHAT_ID" --form-string message_thread_id="$THREAD_ID" \
+            --form-string disable_web_page_preview=true --form-string text="${text:0:4000}" \
+            || echo "::warning title=Không gửi Operation::Telegram từ chối (token sai / bot chưa ở nhóm?)"

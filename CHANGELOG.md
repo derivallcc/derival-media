@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2026-11-14 — Thông báo Operation
+
+- `.github/workflows/notify-operation.yml` (mới): mọi push lên `main` gửi một tin chữ vào topic Operation nhóm D-Family (repo, người đẩy, commit, tệp, link so sánh), từ mọi môi trường; cần secret `TELEGRAM_BOT_TOKEN` (CEO 14/11/2026).
+
 ## 2026-11-05 — Kiến trúc catalog + Media Intelligence (GĐ0, GĐ1, phần Media của GĐ3)
 
 - GĐ0: chụp mốc 77 file + sha256 đủ vào `docs/migration.md`; `check` báo lỗi nếu đường dẫn nào biến mất.
