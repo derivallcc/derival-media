@@ -25,3 +25,4 @@ at,work_id,version,event,from_status,to_status,actor,actor_type,ref,note
 2026-11-06T08:28:24+07:00,CT-0016,v1,created,,testing,studio:archive_run,ai,BS261106A,
 2026-11-06T08:47:35+07:00,CT-0017,v1,created,,testing,studio:archive_run,system,BS261106B,
 2026-11-13T09:48:13+07:00,CT-0019,v1,created,,testing,studio:archive_run,system,RUN-9d64c919cc8cdcc29f63,
+2026-11-23T08:05:23+07:00,CT-0020,v1,created,,testing,studio:archive_run,system,RUN-fab8a0259e263201d73c,
