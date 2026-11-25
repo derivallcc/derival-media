@@ -28,3 +28,4 @@ at,work_id,version,event,from_status,to_status,actor,actor_type,ref,note
 2026-11-23T08:05:23+07:00,CT-0020,v1,created,,testing,studio:archive_run,system,RUN-fab8a0259e263201d73c,
 2026-11-24T10:42:04+07:00,CT-0021,v1,created,,testing,studio:archive_run,system,RUN-23b5a44e788c9c4954f1,
 2026-11-25T10:56:35+07:00,CT-0022,v1,created,,testing,studio:archive_run,system,RUN-4fcc3d184dfcd84ba9b0,
+2026-11-25T15:00:11+07:00,CT-0023,v1,created,,testing,studio:archive_run,system,RUN-0917ee4f0034381779c9,
